@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
+    <title>Hashtegny</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="css/hashtegny.css" type="text/css" />
+    <!-- Main CSS File(Grid Layout) - Default -->
+    <link id="layout-style" rel="stylesheet" href="css/main.grid.css" type="text/css" />
+    <!-- GitHub Badge -->
+    <style>#forkongithub a{background:#000;color:#fff;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:fixed;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}}</style>
+</head>
+
+<body>
+<div class="intro-container">
+    <div class="header">
+        <h3>#Hashtegny</h3>
+        <hr>
+
+        <p>
+            jQuery Plugin aggregates hashtags from different social media networks.
+            <br>Posts are displayed in a unique, & attractive grid, and animated layout.
+            <br>
+            <i class="fa fa-twitter fa-3x" style="color: #0084B4;"></i>
+            <i class="fa fa-instagram fa-3x" style="color: #306088;"></i>
+            <i class="fa fa-vk fa-3x" style="color: #45668e;"></i>
+            <i class="fa fa-google-plus fa-3x" style="color: #DD4B39;"></i>
+        </p>
+        <hr>
+
+        <div class="options">
+            <p hidden><input type="text" class="hashtag" value="fusecodecamp" placeholder="Search for hashtag">
+            <button type="button" class="search"><i class="fa fa-search"></i> Search</button> <p>
+            <hr>
+
+            <button type="button" class="grid-button"><i class="fa fa-th"></i> Grid Layout</button>
+            <button type="button" class="animation-button"><i class="fa fa-star"></i> Animation</button>
+        </div>
+        <hr>
+
+        <div class="network-icons">
+            <div>
+                <iframe src="https://ghbtns.com/github-btn.html?user=OmarElGabry&repo=Hashtegny&type=star&size=small" frameborder="0" scrolling="0" width="50px" height="30px"></iframe>
+            </div>
+            <div>
+                <iframe src="https://ghbtns.com/github-btn.html?user=OmarElGabry&repo=Hashtegny&type=fork&size=small" frameborder="0" scrolling="0" width="50px" height="30px"></iframe>
+            </div>
+            <div>
+                <iframe src="https://ghbtns.com/github-btn.html?user=OmarElGabry&type=follow&size=small" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+            </div>
+            <br>
+            <div>
+                <iframe src="//www.facebook.com/plugins/like.php?href=http://omarelgabry.github.io/Hashtegny/&send=false&layout=button_count&width=80&show_faces=true&font&colorscheme=light&action=like&height=20" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:20px;" allowTransparency="true"></iframe>
+            </div>
+            <div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://omarelgabry.github.io/Hashtegny/"  >Tweet</a><script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+            </div>
+            <div>
+                <div class="g-plusone" data-size="medium"   data-href="http://omarelgabry.github.io/Hashtegny/"></div><script type="text/javascript">(function() {var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;po.src = 'https://apis.google.com/js/plusone.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);})();</script>
+            </div>
+        </div>
+    </div>
+    <a class="toggle-header"><i class="fa fa-angle-up fa-5x"></i></a>
+</div>
+
+<div id="hashtegny-container"></div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <!-- Grid Layout -->
+    <script type="text/javascript" src="node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <!-- doT.js Template Engine -->
+    <script type="text/javascript" src="node_modules/dot/doT.min.js"></script>
+    <!-- Twitter JS library -->
+    <script type="text/javascript" src="node_modules/codebird/codebird.js"></script>
+    <!-- Animation -->
+    <script type="text/javascript" src="js/animations.min.js"></script>
+    <script type="text/javascript" src="js/appear.min.js"></script>
+    <!-- Hashtegny -->
+    <script type="text/javascript" src="js/hashtegny.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            // this line of code because GitHub Pages(or something else weird) changes the link tags to style tags.
+            $("style#layout-style").after('<link id="layout-style" rel="stylesheet" href="css/main.grid.css" type="text/css" />').remove();
+
+            // start the plugin & pass your options
+            $('#hashtegny-container').hashtegny({
+                twitter:{
+                    enable: true,
+                    hashtag: "fusecodecamp",
+                    count: 5        // number of posts to be displayed
+                },
+                google:{
+                    enable: true,
+                    hashtag: "fusecodecamp",
+                    count: 5
+                },
+                instagram:{
+                    enable: true,
+                    hashtag: "fusecodecamp",
+                    count: 5
+                },
+                vk:{
+                    enable: true,
+                    hashtag: "fusecodecamp",
+                    count: 5
+                },
+                textLength: 200,            // max length of post content
+                animate: 10,                 // time of animation for each post in seconds
+                refresh: 60,                // add recent posts if any evey 60 seconds
+                updateTime: 60,             // update post time every 60 second(1 min)
+                template: "default.html",   // filename for the post template. The 'template' has a priority over 'template_html' unless assigned to null
+                template_html:              // HTML for the post template
+                '<div> \
+                    <img src="{{=post.attachement_src}}" width="{{=post.attachement_width}}" height="{{=post.attachement_height}}">  \
+                    <div> \
+                        <img src="{{=post.user_image}}"> \
+                        <h4>{{=post.user_name}}</h4> \
+                        <div onclick="window.open(\'{{=post.url}}\');"><p>{{=post.text}}</p></div> \
+                        <p><i class="fa fa-clock-o"></i><span> {{=post.time}}</span></p> \
+                    </div> \
+                </div>',
+                callback: function() {          // A callback function which will fire when all the posts are fetched and displayed
+                    console.log("Posts have been fetched and displayed");
+                },
+                background: false,              // add background image(i.e 'background.jpg'). Images are inside img folder.
+                showError: false                // show error alert box if any error encountered
+            });
+        });
+    </script>
+</body>
+</html>

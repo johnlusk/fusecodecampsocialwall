@@ -1,0 +1,183 @@
+/*
+ *  Document   : main.animation.css
+ *  Author     : Omar El Gabry <omar.elgabry.93@gmail.com>
+ *  Description: Main CSS File(Animation Layout)
+ *
+ */
+
+/* ==== Main Post Container === */
+.main-post{
+   margin: 0 auto;
+   margin-top: 2%;
+   width: 85%;
+   text-align: center;
+   display: none;
+}
+.main-post.no-image{
+    width: 65%;
+    margin-top: 6%;
+}
+
+/* ==== Main Image Container === */
+.attachement-div {
+    display: inline-block;
+    vertical-align:middle;
+    width: 45%;
+    margin-right: 1%;
+}
+
+/* ==== Main Image === */
+.main-attachement{
+    min-width: 90%;
+    max-width: 100%;
+    min-height: 30em;
+    max-height: 35em;
+    border-radius:5px;
+    box-shadow: 0 0 20px 0 rgba(10, 10, 10, 0.4);
+    moz-border-radius: 5px;
+    webkit-border-radius: 5px;
+}
+.no-image .attachement-div{
+    display: none;
+}
+
+/* ==== User Info Container === */
+.user-data{
+    display:inline-block;
+    vertical-align:middle;
+    width: 45%;
+    text-align: left;
+}
+.no-image .user-data{
+    width: 100%;
+}
+
+/* ==== User Info === */
+.user-image{
+    display: inline-block;
+    vertical-align:middle;
+    padding: 0.7%;
+    width: 20%;
+    min-height: 7em;
+    max-height: 8em;
+    border-radius:3px;
+    moz-border-radius: 3px;
+    webkit-border-radius: 3px;
+}
+.no-image .user-image{
+    padding: 0.3%;
+    border: none;
+    min-height: 10em;
+    max-height: 10em;   
+}
+.user-name{
+    display: inline-block;
+    vertical-align:middle;
+    margin-left: 1%;
+    width: 35%;
+    padding: 1%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.no-image .user-name{
+    font-size: 1.2em;
+}
+.network-image{
+    display: inline-block;
+    vertical-align:middle;
+    width: 12%;
+    margin-left: 25%;
+}
+.no-image .network-image{
+    width: 15%;
+    margin-left: 22%;
+}
+.post-text{
+    cursor:pointer;
+    position: relative;
+    margin-top: 5%;
+    border: 1px solid black;
+    box-shadow: 0 0 20px 0 rgba(10, 10, 10, 0.4);
+}
+.post-text:hover{
+    box-shadow: 0 0 20px 0 rgba(15, 15, 15, 0.6);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.post-text  p{
+    line-height: 1.5em;
+    word-wrap: break-word;
+    text-indent: 2.2em;
+    padding: 2%;
+    margin: 0;
+    overflow: hidden;
+}
+.no-image .post-text p{
+    font-size: 1.4em;
+}
+.post-text span{
+    display: inline-block;
+    position: absolute;
+    top: -0.3em;
+    left: 0;
+    color: #ccc;
+    font-family: Cambria, Georgia, serif;
+    font-size: 8em;
+}
+.no-image .post-text span{
+    font-size: 12em;
+}
+.post-time{
+    padding: 1.5%;
+}
+
+/* ==== @media Query === */
+@media screen and (max-width: 1024px) {
+    .attachement-div {
+        width: 70%;
+    }
+    .with-image .user-data{
+        width: 70%;
+    }
+    .no-image .user-image{
+        min-height: 7em;
+        max-height: 7em;   
+    }
+    .no-image .user-name, .no-image .post-text p{
+        font-size: 1em;
+    }
+    .no-image  .post-text span{
+        font-size: 8em;
+    }
+}
+@media screen and (max-width: 480px) {
+    .main-post, .main-post.no-image{
+        width: 100%;
+    }
+    .attachement-div {
+        min-width: 100%;
+        margin-right: 0;
+    }
+    .user-data{
+        min-width: 100%;
+    }
+    .main-attachement{
+        max-height: 20em;
+        min-height: 20em;
+    }
+    .user-image,.no-image .user-image{
+        max-height: 4.5em;
+        min-height: 4.5em;
+    }
+    .user-name,.post-text  p, .post-time, .no-image .user-name, .no-image .post-text p,.header{
+        font-size: 0.8em;
+    }
+    .post-text span, .no-image  .post-text span{
+        font-size: 6em;
+    }
+    .post-text:hover{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}

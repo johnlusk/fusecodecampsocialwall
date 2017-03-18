@@ -1,0 +1,131 @@
+/*
+ *  Document   : main.grid.css
+ *  Author     : Omar El Gabry <omar.elgabry.93@gmail.com>
+ *  Description: Main CSS File(Grid Layout)
+ *
+ */
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* ==== Plugin Container === */
+.grid{
+    margin: 0 auto;
+    margin-top: 2%;
+}
+/* clearfix */
+.grid:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* ==== Main Post Container === */
+.main-post {
+    width: 210px;
+    float: left;
+    text-align: center;
+    padding: 0.7%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px 0 rgba(10, 10, 10, 0.2);
+    background-color: #eaeaea;
+}
+
+/* ==== Main Image Container === */
+.attachement-div {
+    width: 100%;
+}
+
+/* ==== Main Image === */
+.main-attachement{
+    width: 100%;
+    min-height: 15em;
+    max-height: 17.5em;
+}
+.no-image .attachement-div{
+    display: none;
+}
+
+/* ==== User Info Container === */
+.user-data{
+    width: 100%;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+/* ==== User Info === */
+.user-image{
+    display: inline-block;
+    vertical-align:middle;
+    width: 25%;
+    min-height: 5em;
+    max-height: 6em;
+    border-radius:3px;
+    moz-border-radius: 3px;
+    webkit-border-radius: 3px;
+}
+.user-name{
+    display: inline-block;
+    vertical-align:middle;
+    margin-left: 2%;
+    width: 40%;
+    padding: 1%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.network-image{
+    display: inline-block;
+    vertical-align:middle;
+    width: 20%;
+    margin-left: 10%;
+}
+.post-text{
+    cursor:pointer;
+    position: relative;
+    margin-top: 7%;
+}
+.post-text:hover{
+    box-shadow: 0 0 20px 0 rgba(15, 15, 15, 0.6);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.post-text  p{
+    line-height: 1.5em;
+    word-wrap: break-word;
+    text-indent: 2.2em;
+    padding: 3%;
+    margin: 0;
+    overflow: hidden;
+}
+.post-text span{
+    display: inline-block;
+    position: absolute;
+    top: -0.3em;
+    left: 0;
+    color: #ccc;
+    font-family: Cambria, Georgia, serif;
+    font-size: 6em;
+}
+.post-time{
+    margin-bottom: 0;
+    padding: 1.5%;
+}
+
+/* ==== @media Query === */
+@media screen and (max-width: 1024px) {
+    .main-post{
+        width: 350px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .main-post{
+        width: 280px;
+    }
+    .post-text:hover{
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
